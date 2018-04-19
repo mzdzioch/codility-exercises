@@ -18,7 +18,7 @@ public class CountSemiprimes {
         int count = 0;
 
         for (int i = 1; i <= semiprimes.length; i++) {
-             if(checkIfSemprime(i)){
+             if(checkIfSemiprime(i)){
                  count++;
              }
              semiprimes[i-1] = count;
@@ -27,7 +27,7 @@ public class CountSemiprimes {
         return semiprimes;
     }
 
-    public boolean checkIfSemprime(int N){
+    public boolean checkIfSemiprime(int N){
 
         int count = 0;
 
