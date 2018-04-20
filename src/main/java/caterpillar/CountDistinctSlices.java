@@ -8,16 +8,24 @@ public class CountDistinctSlices {
     public int solution(int M, int[] A){
 
         Set<Integer> distinctSet = new HashSet<>();
-        int back = 0, front = 0, count = 0;
+        int front = 0, count = 0;
 
-        for (int k : A) {
-            front = k;
+        for (int back = 0; back < A.length;  back++) {
+            front = back;
 
-            if(distinctSet.contains(A[front])){
-
+            while(front < A.length){
+                if(distinctSet.contains(A[front])){
+                    distinctSet.clear();
+                    break;
+                } else {
+                    distinctSet.add(A[front]);
+                    count++;
+                    front++;
+                }
             }
+            distinctSet.clear();
         }
 
-        return 0;
+        return count;
     }
 }
